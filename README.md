@@ -18,9 +18,7 @@ To run this module, you'll need Python 3 and `virtualenv`. The required dependen
 First, create a virtual environment for your project if you don't have one already:
 
 ```bash
-
-python3  -m  venv  venv
-
+python3 -m venv venv
 ```
 
 Activate the virtual environment:
@@ -28,9 +26,7 @@ Activate the virtual environment:
   
 
 ```bash
-
-source  venv/bin/activate
-
+source venv/bin/activate
 ```
 
 ### 2. Install the Required Dependencies
@@ -41,9 +37,7 @@ With the virtual environment activated, install the dependencies listed in the `
   
 
 ```bash
-
-pip  install  -r  requirements.txt
-
+pip install -r requirements.txt
 ```
 
 ### 3. Set Environment Variables
@@ -63,9 +57,7 @@ You can set this environment variable as follows:
   
 
 ```bash
-
-export  FILE_SERVER_ROOT_PATH="/path/to/your/file/server"
-
+export FILE_SERVER_ROOT_PATH="/path/to/your/file/server"
 ```
 
   
@@ -79,9 +71,7 @@ To start monitoring file changes and publishing them to the message broker, simp
   
 
 ```bash
-
-python  monitor.py
-
+python monitor.py
 ```
 
   
@@ -99,9 +89,7 @@ To run the test cases for this module, use the following command:
   
 
 ```bash
-
-python3  -m  unittest  discover  -s  tests
-
+python3 -m unittest discover -s tests
 ```
 
   
