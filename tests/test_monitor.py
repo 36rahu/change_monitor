@@ -41,7 +41,7 @@ class TestFileChangeMonitor(unittest.TestCase):
 
         diff = self.handler.get_file_diff(file_path)
         self.assertEqual(diff, expected_diff)
-        mock_file.assert_called_once_with(file_path, 'r')
+        mock_file.assert_called_once_with(file_path, 'r', encoding='utf-8')
 
     @patch('builtins.open', new_callable=mock_open, read_data="Line1\nLine2\n")
     def test_get_file_diff_with_previous_version(self, mock_file):
@@ -52,7 +52,7 @@ class TestFileChangeMonitor(unittest.TestCase):
 
         diff = self.handler.get_file_diff(file_path)
         self.assertEqual(diff, expected_diff)
-        mock_file.assert_called_once_with(file_path, 'r')
+        mock_file.assert_called_once_with(file_path, 'r', encoding='utf-8')
 
     @patch('file_monitor.monitor.FileChangeMonitor.get_file_diff')
     @patch('file_monitor.monitor.FileChangeMonitor._get_current_timestamp')
@@ -102,5 +102,5 @@ class TestFileChangeMonitor(unittest.TestCase):
 
         self.handler.audit_change_log(timestamp, file_path)
 
-        mock_open.assert_called_once_with(self.handler.audit_log_path, "a")
+        mock_open.assert_called_once_with(self.handler.audit_log_path, "a", encoding='utf-8')
         mock_open().write.assert_called_once_with(f"{timestamp}, {file_path}\n")
