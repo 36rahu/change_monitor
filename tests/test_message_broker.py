@@ -1,4 +1,5 @@
 import unittest
+
 from message_broker.broker import MessageBroker, Producer, Consumer
 
 class TestMessageBroker(unittest.TestCase):

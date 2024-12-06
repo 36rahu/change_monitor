@@ -11,6 +11,7 @@ The system allows producers to publish messages and consumers to subscribe to to
 with wildcard support for flexible topic matching.
 """
 
+
 class MessageBroker:
     """
     A simple message broker that allows producers to publish messages to topics 
@@ -162,7 +163,7 @@ class Consumer:
             message (str): The message content.
         """
         self.messages.append((topic, message))
-        print("Message recived")
+        print("Message recived...")
         print(f"Topic: {topic}, Message: {message}")
 
     def subscribe(self, broker, topic):

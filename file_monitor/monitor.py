@@ -5,8 +5,8 @@ message broker, and logs file changes for auditing purposes.
 """
 
 import os
-from datetime import datetime
 import difflib
+from datetime import datetime
 
 from watchdog.events import FileSystemEventHandler
 

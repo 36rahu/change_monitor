@@ -1,7 +1,9 @@
 import unittest
-from unittest.mock import MagicMock, patch, mock_open
-from file_monitor.monitor import FileChangeMonitor
 from datetime import datetime
+
+from unittest.mock import MagicMock, patch, mock_open
+
+from file_monitor.monitor import FileChangeMonitor
 
 
 class TestFileChangeMonitor(unittest.TestCase):

@@ -1,7 +1,6 @@
 import unittest
 from unittest.mock import MagicMock, patch
-import os
-import time
+
 from app import setup_message_broker, setup_file_monitoring, start_consumer_listener, main
 
 
