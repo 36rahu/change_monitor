@@ -1,0 +1,12 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-pylint
+    rev: v2.7.4
+    hooks:
+      - id: pylint
+        args:
+        - --disable=too-few-public-methods
+        name: pylint
+        entry: pylint
+        language: system
+        exclude: ^tests/
+        files: \.py$
