@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 class TestFileChangeMonitor(unittest.TestCase):
-    """Test cases for File change monitor"""
+    """Test cases for FileChangeMonitor"""
 
     def setUp(self):
         """Set up test dependencies and mock objects."""
@@ -37,7 +37,7 @@ class TestFileChangeMonitor(unittest.TestCase):
         """Test diff generation when there's no previous version of the file."""
         file_path = "file.txt"
         self.handler.file_versions = {}
-        expected_diff = "+ ['Line1\\n', 'Line2\\n']"
+        expected_diff = "New content\n++ Line1\n\nLine2\n"
 
         diff = self.handler.get_file_diff(file_path)
         self.assertEqual(diff, expected_diff)

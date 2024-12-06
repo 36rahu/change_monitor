@@ -71,7 +71,7 @@ To start monitoring file changes and publishing them to the message broker, simp
   
 
 ```bash
-python monitor.py
+python app.py
 ```
 
   

@@ -1,6 +1,6 @@
 """
-This module sets up and runs a file monitoring system that listens for changes in a specified 
-directory and processes messages via a message broker. 
+This module sets up and runs a file change monitoring system that listens for changes 
+in a specified directory and processes messages via a message broker. 
 """
 import os
 import time

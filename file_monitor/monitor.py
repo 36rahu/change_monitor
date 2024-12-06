@@ -69,8 +69,12 @@ class FileChangeMonitor(FileSystemEventHandler):
         Returns:
             str: The diff of the file.
         """
-        with open(file_path, 'r', encoding='utf-8') as fp:
-            current_content = fp.readlines()
+        try:
+            with open(file_path, 'r', encoding='utf-8') as fp:
+                current_content = fp.readlines()
+        except UnicodeDecodeError:
+            return "Unable to file diff (binary or unsupported format)"
+
         previous_content = self.file_versions.get(file_path)
 
         if previous_content:
@@ -81,7 +85,7 @@ class FileChangeMonitor(FileSystemEventHandler):
                                         lineterm='')
             file_diff = '\n'.join(diff)
         else:
-            file_diff = f"+ {current_content}"
+            file_diff = f"New content\n++ {'\n'.join(current_content)}"
         self.file_versions[file_path] = current_content
 
         return file_diff
